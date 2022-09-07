@@ -21,20 +21,33 @@ struct ContentView: View {
                 .modifier(TextFieldModifier())
             TextField("Password", text: $text)
                 .modifier(TextFieldModifier())
-            ZStack{
-            Button("Log In", role: .destructive, action: {})
-                
-                    .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.blue)
-                        .frame(width: 390, height: 40)
-                        .padding(.horizontal, 122)
-                    )
-                Text("Log In")
-                    .foregroundColor(.white)
-                    .padding(.top, 22)
-                
+            Button {
+            } label: {
+              Text("Log In")
             }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background(.blue)
+            .tint(.blue)
+            .buttonStyle(.bordered)
+            .cornerRadius(10)
+            .padding()
+
+
+//            ZStack{
+//            Button("Log In", role: .destructive, action: {})
+//                    .padding(.leading)
+//                    .overlay(
+//                    RoundedRectangle(cornerRadius: 10)
+//                        .fill(.blue)
+//                        .frame(width: 390, height: 40)
+//                        .padding(.horizontal, 122)
+//                    )
+//                Text("Log In")
+//                    .foregroundColor(.white)
+//                    .padding(.top, 22)
+//                    .offset(y: -10)
+//            }
             ZStack {
                 Color.gray
             TabView {
